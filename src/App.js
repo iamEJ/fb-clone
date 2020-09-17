@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <div>
+      <div className="app_body">
         <Sidebar />
         <Feed />
       </div>
