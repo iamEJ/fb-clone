@@ -8,14 +8,13 @@ import ChatIcon from "@material-ui/icons/Chat";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
+import { useStateValue } from "./StateProvider";
 
 function Sidebar() {
+  const [{ user }, dispacth] = useStateValue();
   return (
     <div className="sidebar">
-      <SidebarRow
-        src="https://www.newstatesman.com/sites/default/files/styles/lead_image/public/Longreads_2019/02/2019_06_barn_owl.jpg?itok=yzKXpbSj"
-        title="Fallen Owl"
-      />
+      <SidebarRow src={user.photoURL} title={user.displayName} />
       <SidebarRow
         Icon={LocalHospitalIcon}
         title="Covid-19 Information Center"
